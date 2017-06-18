@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-US"
+	<head>
+		<meta charset="utf-8">
+		<title>Planet Variants</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+		<meta name="viewport" content="width=device-width">
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<script src="javascripts/main.js"></script>
+	</head>
+	<body onload="apiGetMaster()">
+		<header>
+			<h1>Catalog of Variants</h1>
+			<p>Select a category to jump to those sprites.</p>
+		</header>
+		<section>
+			<div>
+				<select id="planet-selector" onchange="selectCategory()">
+					<option value="default">Select a Category</option>
+					<option value="cloud">Cloud</option>
+					<option value="desert">Desert</option>
+					<option value="dust">Dust</option>
+					<option value="forest">Forest</option>
+					<option value="gas">Gas</option>
+					<option value="ice">Ice</option>
+					<option value="lava">Lava</option>
+					<option value="ocean">Ocean</option>
+					<option value="rock">Rock</option>
+				</select>
+			</div>
+			<div id="planet-view-back">
+				<div id="previous">
+					<img id="previous-arrow" src="images/arrow.svg" onclick="previousImage()"/>
+				</div>
+				<div id="planet-image">
+					<img id="base-planet" src="images/unknown.svg/">
+					<img id="variant-planet" src="images/unknown.svg"/>
+				</div>
+				<div id="next">
+					<img id="next-arrow" src="images/arrow.svg" onclick="nextImage()"/>
+				</div>
+				<div id="info">
+					<p id="index">0/0</p>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

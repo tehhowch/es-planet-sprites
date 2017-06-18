@@ -1,0 +1,64 @@
+header {
+	text-align: center;
+}
+
+body {
+	background-color: #000000;
+	font: 14px/1.5 Helvetica, Arial, sans-serif;
+	color: #353535;
+	font-weight: 400;
+}
+
+section {
+	text-align: center;
+	width: 80%;
+	margin: auto;
+}
+
+select {
+	text-align: center;
+}
+
+#planet-view-back {
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 30px;
+	border-top: 2px solid #353535;
+}
+
+#planet-image {
+	max-width: 80%;
+	margin: auto;
+}
+
+#planet-image img {
+	margin: auto;
+	max-width: 40%;
+}
+
+#previous-arrow, #next-arrow {
+	cursor: pointer;
+	position: fixed;
+	max-width: 10%;
+}
+
+#previous-arrow {
+	transform: rotate(90deg);
+	top: 50%;
+	left: 5%;
+}
+
+#next-arrow {
+	transform: rotate(-90deg);
+	top: 50%;
+	right: 5%;
+}
+
+#info {
+	width: 80%;
+	position: fixed;
+	top: 75%;
+	text-align: center;
+	font-size: 200%;
+}

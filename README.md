@@ -1,1 +1,0 @@
-# es-planet-sprites
