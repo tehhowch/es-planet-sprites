@@ -82,7 +82,7 @@ function buildMap(data, data2) {
 		}
 		
 		if (match) {
-			lookup[key] = match;
+			lookup[key] = rawOther + match;
 		}
 		else {
 			lookup[key] = "images/unknown.svg";
@@ -93,7 +93,7 @@ function buildMap(data, data2) {
 
 function populate() {
 	document.getElementById("base-planet").src = rawMaster + namesMaster[imgIndex];
-	document.getElementById("variant-planet").src = rawOther + lookup[stripExtension(namesMaster[imgIndex])];
+	document.getElementById("variant-planet").src = lookup[stripExtension(namesMaster[imgIndex])];
 	document.getElementById("index").innerHTML = (imgIndex + 1) + "/" + namesMaster.length;
 }
 
