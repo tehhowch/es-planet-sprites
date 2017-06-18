@@ -85,7 +85,7 @@ function buildMap(data, data2) {
 			lookup[key] = match;
 		}
 		else {
-			lookup[key] = "unknown.svg";
+			lookup[key] = "images/unknown.svg";
 		}
 	}
 	populate();
