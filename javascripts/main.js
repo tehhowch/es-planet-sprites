@@ -93,7 +93,11 @@ function buildMap(data, data2) {
 
 function populate() {
 	document.getElementById("base-planet").src = rawMaster + namesMaster[imgIndex];
+	var masterWidth = document.getElementById("base-planet").width;
+	
 	document.getElementById("variant-planet").src = lookup[stripExtension(namesMaster[imgIndex])];
+	document.getElementById("variant-planet").width = masterWidth;
+	
 	document.getElementById("index").innerHTML = (imgIndex + 1) + "/" + namesMaster.length;
 }
 
