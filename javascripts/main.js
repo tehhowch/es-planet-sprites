@@ -1,5 +1,5 @@
 var rawMaster = "https://github.com/endless-sky/endless-sky/raw/master/images/planet/";
-var rawOther = "https://github.com/comnom/es-planet-sprites/raw/master/testing/";
+var rawOther = "https://github.com/comnom/es-planet-sprites/raw/master/planets/";
 
 var excludes = ["panels", "ringworld", "station", "wisp", "wormhole"]
 
@@ -27,7 +27,7 @@ function apiGetMaster() {
 }
 
 function apiGetOther(data) {
-	var urlOther = "https://api.github.com/repos/comnom/es-planet-sprites/contents/testing?ref=master";
+	var urlOther = "https://api.github.com/repos/comnom/es-planet-sprites/contents/planets?ref=master";
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.onreadystatechange = function() {
