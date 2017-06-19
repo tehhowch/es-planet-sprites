@@ -10,7 +10,7 @@ Since we're going to be creating variants for the existing planets, they will ne
 To find out which sprites are already done check the [catalog page](https://comnom.github.io/es-planet-sprites/). To find out which are pending check the [issues page](https://github.com/comnom/es-planet-sprites/issues).
 
 ## License Guidelines
-* Since this project will be targeting an free/open source game, all sprites should be released under a [Creative Commons](https://creativecommons.org/licenses/) license, or into the public domain.
+* Since this project will be targeting a free/open source game, all sprites should be released under a [Creative Commons](https://creativecommons.org/licenses/) license, or into the public domain.
 * Any source images used to create the sprites must be properly attributed where required.
 * A pull request must include an entry in the copyright file following the appropriate format.
 
@@ -18,6 +18,7 @@ To find out which sprites are already done check the [catalog page](https://comn
 * Please review the guide on [creating planet sprites](https://github.com/endless-sky/endless-sky/wiki/PlanetSprites).
 * In particular, the shadows should match very closely, the atmospheres should be subtle, and colors should be lightly saturated.
 * When resizing the image to the scale of the planet it's replacing, don't forget that cropping will affect the apparent size of the planet.
+* Review the [existing sprite assets](https://drive.google.com/drive/folders/0B9aK8dG39P29fmtWX3Q3VDZYUzRuMlJLZ3ZhdG1ROXRtSzlzRGNXNVY4YnVrMUdxSWtXWGs) if necessary.
 * A pull request should include both the normal sized, and 2x versions of the sprites.
 
 ## Naming Guideline
