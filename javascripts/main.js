@@ -42,13 +42,8 @@ function apiGetOther(data) {
 	xhttp.send();
 }
 
-function stripExtension(string, extended = false) {
-	if (extended) {
-		return string.slice(0, -5);
-	}
-	else {
-		return string.slice(0, -4);
-	}
+function stripExtension(string) {
+	return string.slice(0, -4);
 }
 
 function buildList(data, list) {
@@ -76,7 +71,7 @@ function buildMap(data, data2) {
 		var match = "";
 		
 		for (var j = 0; j < namesOther.length; j++) {
-			if (stripExtension(namesOther[j], true).startsWith(key)) {
+			if (namesOther[j].startsWith(key)) {
 				match = namesOther[j];
 			}
 		}
@@ -97,9 +92,15 @@ function populate() {
 	document.getElementById("index").innerHTML = (imgIndex + 1) + "/" + namesMaster.length;
 }
 
-function setVariantWidth() {
-	var masterWidth = document.getElementById("base-planet").width;
-	document.getElementById("variant-planet").width = masterWidth;
+function setWidth() {
+	var parentWidth = document.getElementById("planet-image").offsetWidth;
+	var baseImg = document.getElementById("base-planet");
+	
+	if (baseImg.naturalWidth < (parentWidth * 0.4)) {
+		baseImg.width = baseImg.naturalWidth;
+	}
+	
+	document.getElementById("variant-planet").width = baseImg.width;
 }
 
 function previousImage() {
@@ -131,7 +132,7 @@ function selectCategory() {
 	
 	for (var i = 0; i < namesMaster.length; i++) {
 		if (namesMaster[i].startsWith(currentSelection)) {
-			newIndex = i;
+			var newIndex = i;
 			break;
 		}
 	}
