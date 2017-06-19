@@ -43,12 +43,7 @@ function apiGetOther(data) {
 }
 
 function stripExtension(string, extended = false) {
-	if (extended) {
-		return string.slice(0, -5);
-	}
-	else {
-		return string.slice(0, -4);
-	}
+	return string.slice(0, -4);
 }
 
 function buildList(data, list) {
@@ -76,7 +71,7 @@ function buildMap(data, data2) {
 		var match = "";
 		
 		for (var j = 0; j < namesOther.length; j++) {
-			if (stripExtension(namesOther[j], true).startsWith(key)) {
+			if (namesOther[j].startsWith(key)) {
 				match = namesOther[j];
 			}
 		}
@@ -131,7 +126,7 @@ function selectCategory() {
 	
 	for (var i = 0; i < namesMaster.length; i++) {
 		if (namesMaster[i].startsWith(currentSelection)) {
-			newIndex = i;
+			var newIndex = i;
 			break;
 		}
 	}
