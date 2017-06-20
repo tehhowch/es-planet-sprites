@@ -1,5 +1,5 @@
-var rawMaster = "https://github.com/endless-sky/endless-sky/raw/master/images/planet/";
-var rawOther = "https://github.com/comnom/es-planet-sprites/raw/master/planets/";
+var rawMaster = "https://raw.githubusercontent.com/endless-sky/endless-sky/master/images/planet/";
+var rawOther = "https://raw.githubusercontent.com/comnom/es-planet-sprites/master/planets/";
 
 var excludes = ["panels", "ringworld", "station", "wisp", "wormhole"]
 
@@ -42,7 +42,7 @@ function apiGetOther(data) {
 	xhttp.send();
 }
 
-function stripExtension(string, extended = false) {
+function stripExtension(string) {
 	return string.slice(0, -4);
 }
 
@@ -53,6 +53,7 @@ function buildList(data, list) {
 		for (var j = 0; j < excludes.length; j++) {
 			if (data[i].name.startsWith(excludes[j])) {
 				exclude = true;
+				break;
 			}
 		}
 		
@@ -73,6 +74,7 @@ function buildMap(data, data2) {
 		for (var j = 0; j < namesOther.length; j++) {
 			if (namesOther[j].startsWith(key)) {
 				match = namesOther[j];
+				break;
 			}
 		}
 		
@@ -90,11 +92,30 @@ function populate() {
 	document.getElementById("base-planet").src = rawMaster + namesMaster[imgIndex];
 	document.getElementById("variant-planet").src = lookup[stripExtension(namesMaster[imgIndex])];
 	document.getElementById("index").innerHTML = (imgIndex + 1) + "/" + namesMaster.length;
+	document.getElementById("name").innerHTML = stripExtension(namesMaster[imgIndex]);
 }
 
 function setVariantWidth() {
 	var masterWidth = document.getElementById("base-planet").width;
 	document.getElementById("variant-planet").width = masterWidth;
+}
+
+document.onkeyup = function(event) {
+	if (document.getElementById("planet-selector") == document.activeElement) {
+		return;
+	}
+	
+	event = event || window.event;
+	
+	var keycode = event.keyCode;
+	
+	if (keycode == 37) {
+		previousImage();
+	}
+	
+	if (keycode == 39) {
+		nextImage();
+	}
 }
 
 function previousImage() {
@@ -118,14 +139,14 @@ function nextImage() {
 }
 
 function selectCategory() {
-	if (document.getElementById("planet-selector").selectedIndex == 0) {
+	var planetSelector = document.getElementById("planet-selector");
+	
+	if (planetSelector.selectedIndex == 0) {
 		return;
 	}
 	
-	currentSelection = document.getElementById("planet-selector").value;
-	
 	for (var i = 0; i < namesMaster.length; i++) {
-		if (namesMaster[i].startsWith(currentSelection)) {
+		if (namesMaster[i].startsWith(planetSelector.value)) {
 			var newIndex = i;
 			break;
 		}

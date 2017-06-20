@@ -62,3 +62,7 @@ select {
 	text-align: center;
 	font-size: 200%;
 }
+
+#index, #name {
+	margin: 0;
+}
